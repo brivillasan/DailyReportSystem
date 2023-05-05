@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+label {
+    display: inline-block;
+    width: 8em;
+    line-height: 150%;
+}
+
+.err {
+    color: red;
+}
+h1,li{
+    display:block;
+    background-color:#ffccff;
+    margin:0 auto;
+    width:1000px;
+}
