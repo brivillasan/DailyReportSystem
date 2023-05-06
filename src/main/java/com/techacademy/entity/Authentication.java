@@ -9,6 +9,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
 
 import lombok.Data;
 
@@ -30,15 +33,16 @@ public class Authentication {
     @Id
     @NotEmpty
     @Column(length = 20, nullable = false)
+    @Length(max=20)
     private String code;
 
     /** パスワード */
-    @NotEmpty
+    @NotNull
+    @Length(max=255)
     @Column(length = 255, nullable = false)
     private String password;
 
     /** 権限 */
-    @NotEmpty
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -46,4 +50,7 @@ public class Authentication {
     @OneToOne
     @JoinColumn(name="employee_id", referencedColumnName="id")
     private Employee employee;
+
+
+
 }

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.techacademy.entity.Authentication;
 import com.techacademy.entity.Employee;
 import com.techacademy.repository.EmployeeRepository;
 
@@ -38,13 +39,17 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-
     /** Userの削除を行なう */
     @Transactional
     public void deleteUser(Integer id) {
         Employee employee = employeeRepository.findById(id).get();
         employee.setDeleteFlag(1);
         employeeRepository.save(employee);
+    }
+
+    public Authentication getAuthentication(Integer id) {
+        // TODO 自動生成されたメソッド・スタブ
+        return null;
     }
  }
 

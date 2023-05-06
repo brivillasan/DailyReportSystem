@@ -31,8 +31,8 @@
         <br>
 
         <label for="password">パスワード</label>
-        <input type="text" th:field="*{authentication.password}" th:errorclass="err">
-        <span th:errors="*{authentication.password}" class="err"></span>
+        <input type="text" th:field="*{authentication.newpass}" th:errorclass="err">
+        <span th:errors="*{authentication.newpass}" class="err"></span>
         <br>
 
         <label for="role">権限</label>
@@ -43,7 +43,8 @@
         </select>
 
         <span th:errors="*{authentication.role}" class="err"></span>
-        <br>        <input type="submit" value="投稿">
+        <br> 
+        <input type="submit" value="投稿">
         <a th:href="@{/employee/list}">一覧に戻る</a>
     </form>
 </body>

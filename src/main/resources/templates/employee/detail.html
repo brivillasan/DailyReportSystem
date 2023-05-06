@@ -9,11 +9,11 @@
 
     <form method="post" action="/employee/detail">
         <table th:object="${employee}">
-            <tr><th>社員番号</th><td><input type="text" name="authentication.code" th:value="*{authentication.code}"></td></tr>
-            <tr><th>氏名</th><td><input type="text" name="name" th:value="*{name}"></td></tr>
-            <tr><th>権限</th><td><input type="text" name="authentication.role" th:value="*{authentication.role}"></td></tr>
-            <tr><th>登録日時</th><td><input type="text" name="register" th:value="*{createdAt}"></td></tr>
-            <tr><th>更新日時</th><td><input type="text" name="update" th:value="*{updatedAt}"></td></tr>
+            <tr><th>社員番号</th><td th:text="*{authentication.code}"></td></tr>
+            <tr><th>氏名</th><td th:text="*{name}"></td></tr>
+            <tr><th>権限</th><td th:text="*{authentication.role}"></td></tr>
+            <tr><th>登録日時</th><td th:text="*{createdAt}"></td></tr>
+            <tr><th>更新日時</th><td th:text="*{updatedAt}"></td></tr>
 
         </table>
         <a th:href="@{/employee/update/{id}/(id=${employee.id})}">この従業員情報を編集する</a>
