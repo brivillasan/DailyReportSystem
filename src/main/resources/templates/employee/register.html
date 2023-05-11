@@ -30,9 +30,9 @@
         <span th:errors="*{name}" class="err"></span>
         <br>
 
-        <label for="password">パスワード</label>
-        <input type="text" th:field="*{authentication.newpass}" th:errorclass="err">
-        <span th:errors="*{authentication.newpass}" class="err"></span>
+        <label for="newpass">パスワード</label>
+        <input type="text" th:field="*{authentication.password}" th:errorclass="err">
+        <span th:errors="*{authentication.password}" class="err"></span>
         <br>
 
         <label for="role">権限</label>
